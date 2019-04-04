@@ -4,7 +4,7 @@ require 'yunpian_sms/version'
 
 Gem::Specification.new do |s|
   s.name        = 'yunpian_sms'
-  s.version     = BaiduAi::VERSION
+  s.version     = YunPianSMS::VERSION
   s.date        = '2019-04-04'
   s.summary     = "Yunpian sms ruby sdk"
   s.description = "An unofficial simple yunpian sms ruby gem"

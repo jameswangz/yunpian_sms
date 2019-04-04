@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9e56bc29-b1f8-4605-8f07-ee1f910b05b0" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/yunpian_sms.gemspec" beforeDir="false" afterPath="$PROJECT_DIR$/yunpian_sms.gemspec" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/yunpian_sms/version.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/yunpian_sms/version.rb" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -45,20 +45,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/lib/yunpian_sms/version.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="66">
-              <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+            <state relative-caret-position="22">
+              <caret line="1" column="18" selection-start-line="1" selection-start-column="18" selection-end-line="1" selection-end-column="18" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/yunpian_sms.gemspec">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="220">
-              <caret line="10" column="30" selection-start-line="10" selection-start-column="30" selection-end-line="10" selection-end-column="30" />
+            <state relative-caret-position="418">
+              <caret line="19" column="3" lean-forward="true" selection-start-line="19" selection-start-column="3" selection-end-line="19" selection-end-column="3" />
             </state>
           </provider>
         </entry>
@@ -113,8 +113,8 @@
         <option value="$PROJECT_DIR$/lib/yunpian_sms/template.rb" />
         <option value="$PROJECT_DIR$/spec/yunpian_sms_spec.rb" />
         <option value="$PROJECT_DIR$/README.md" />
-        <option value="$PROJECT_DIR$/lib/yunpian_sms/version.rb" />
         <option value="$PROJECT_DIR$/yunpian_sms.gemspec" />
+        <option value="$PROJECT_DIR$/lib/yunpian_sms/version.rb" />
       </list>
     </option>
   </component>
@@ -259,7 +259,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1554367115810</updated>
-      <workItem from="1554367117348" duration="3876000" />
+      <workItem from="1554367117348" duration="3995000" />
     </task>
     <servers />
   </component>
@@ -296,7 +296,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3876000" />
+    <option name="totallyTimeSpent" value="3995000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-483" y="-1080" width="2560" height="1080" extended-state="0" />
@@ -349,13 +349,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/yunpian_sms/version.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="66">
-          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/spec/fixtures/configuration.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="22">
@@ -382,8 +375,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/yunpian_sms.gemspec">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="10" column="30" selection-start-line="10" selection-start-column="30" selection-end-line="10" selection-end-column="30" />
+        <state relative-caret-position="418">
+          <caret line="19" column="3" lean-forward="true" selection-start-line="19" selection-start-column="3" selection-end-line="19" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/yunpian_sms/version.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="22">
+          <caret line="1" column="18" selection-start-line="1" selection-start-column="18" selection-end-line="1" selection-end-column="18" />
         </state>
       </provider>
     </entry>

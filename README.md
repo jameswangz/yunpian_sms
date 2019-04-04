@@ -33,11 +33,15 @@ require 'yunpian_sms'
 YunPianSMS.api_key = 'your api key'
 
 # template examples
-all_templates = YunPianSMS::Template.all
-all_templates.each do |element|
+result = YunPianSMS::Template.all
+if result.successful
+  result.body.each do |element|
     template_id = element["tpl_id"]
-    template = YunPianSMS::Template.find template_id
-end 
+    template = YunPianSMS::Template.find(template_id).body
+  end  
+else
+  # raise error
+end
 ~~~
 
 

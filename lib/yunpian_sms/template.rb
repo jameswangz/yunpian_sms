@@ -1,5 +1,6 @@
 require 'net/http'
 require 'json'
+require 'yunpian_sms/result'
 
 class YunPianSMS::Template
 
@@ -24,9 +25,9 @@ class YunPianSMS::Template
       http.request req
     end
     if YunPianSMS.debug_mode && YunPianSMS.logger
-      YunPianSMS.logger.debug "Get Templates response #{res.body}"
+      YunPianSMS.logger.debug "Get Templates response status: #{res.code}, body: #{res.body}"
     end
-    JSON.parse res.body
+    YunPianSMS::Result.new(res.kind_of?(Net::HTTPSuccess), JSON.parse(res.body))
   end
 
 end

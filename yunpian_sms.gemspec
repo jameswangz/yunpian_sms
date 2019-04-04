@@ -8,7 +8,7 @@ Gem::Specification.new do |s|
   s.date        = '2019-04-04'
   s.summary     = "Yunpian sms ruby sdk"
   s.description = "An unofficial simple yunpian sms ruby gem"
-  s.authors     = ["LCola"]
+  s.authors     = ["James Wang"]
   s.email       = 'james.wang.z81@gmail.com'
   s.files       = %w(README.md LICENSE.md ) + Dir.glob('lib/**/*.rb')
   s.test_files  = Dir.glob('spec/*_spec.rb')

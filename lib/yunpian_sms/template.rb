@@ -15,7 +15,7 @@ class YunPianSMS::Template
   private
 
   def self.get_templates(params)
-    uri = URI.parse("#{YunPianSMS.server}/tpl/get.json")
+    uri = URI.parse("#{YunPianSMS.server}/v2/tpl/get.json")
     if YunPianSMS.debug_mode && YunPianSMS.logger
       YunPianSMS.logger.debug "Requesting uri #{uri}..."
     end

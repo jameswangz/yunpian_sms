@@ -7,7 +7,8 @@ require 'logger'
 describe YunPianSMS do            
   
   subject(:logger) { Logger.new STDOUT  }
-  subject(:api_key) { YAML.load_file('./spec/fixtures/configuration.yml')['api_key']  }
+  subject(:configuration) { YAML.load_file('./spec/fixtures/configuration.yml') }
+  subject(:api_key) { configuration['api_key']  }
 
   before do
     YunPianSMS.debug_mode = true                     
@@ -31,7 +32,47 @@ describe YunPianSMS do
         template_id = element["tpl_id"]
         template_result = YunPianSMS::Template.find template_id
         expect(template_result.successful).to be true
-        logger.debug "template #{template_result.body}"
+        logger.debug "template #{template_result.inspect}"
+      end
+    end
+
+  end
+
+  context 'messages' do
+
+    it 'should send single message successfully' do
+      YunPianSMS.api_key = api_key
+      template_id = '2697618'
+      mobile_no = configuration['single_mobile_no']
+      # 【智能通勤】车辆变更提醒: 尊敬的乘客您好, 您所乘坐的#keyword1#由于#keyword2#, 车牌号变更为#keyword3#, 变更日期范围为#keyword4#, 请提前到乘车站点候车以免耽误您的行程，谢谢。
+      params = {
+          keyword1: '横琴号十号线',
+          keyword2: '车辆定期维修',
+          keyword3: '粤C66666',
+          keyword4: '2019-05-20 至 2019-05-22'
+      }
+      result = YunPianSMS::Sender.template_single_send(template_id, mobile_no, params)
+      # expect(result.successful).to be true
+      logger.debug "result #{result.inspect}"
+    end
+
+    it 'should batch send messages successfully' do
+      YunPianSMS.api_key = api_key
+      template_id = '2697618'
+      mobile_nos = configuration['batch_mobile_nos']
+      # 【智能通勤】车辆变更提醒: 尊敬的乘客您好, 您所乘坐的#keyword1#由于#keyword2#, 车牌号变更为#keyword3#, 变更日期范围为#keyword4#, 请提前到乘车站点候车以免耽误您的行程，谢谢。
+      params = {
+        keyword1: '横琴号十号线',
+        keyword2: '车辆定期维修',
+        keyword3: '粤C66666',
+        keyword4: '2019-05-20 至 2019-05-22'
+      }
+      batch_result = YunPianSMS::Sender.template_batch_send(template_id, mobile_nos, params)
+      logger.debug batch_result.inspect
+      batch_result.details.each do |result|
+        result.body['data'].each do |data|
+          logger.debug "#{data['code']} #{data['msg']}"
+        end
       end
     end
 

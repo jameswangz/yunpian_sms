@@ -1,7 +1,7 @@
 module YunPianSMS
 
   @debug_mode = true
-  @server = "https://sms.yunpian.com/v2"
+  @server = "https://sms.yunpian.com"
 
   class<< self
     attr_accessor :logger, :debug_mode, :api_key
@@ -9,5 +9,6 @@ module YunPianSMS
   end
   
   require 'yunpian_sms/template'
-  
+  require 'yunpian_sms/sender'
+
 end

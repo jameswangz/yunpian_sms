@@ -15,6 +15,8 @@ class YunPianSMS::Sender
 
   def self.template_batch_send template_id, mobile_nos, params
     successful_count = 0
+    successful_people = []
+    failed_people = []
     total_fee = 0.0
     uri = URI("#{YunPianSMS.server}/v2/sms/tpl_batch_send.json")
 
@@ -23,10 +25,18 @@ class YunPianSMS::Sender
       result = send_internal(uri, template_id, mobile, params)
       successful_count += result.body['total_count']
       total_fee += result.body['total_fee'].to_f
+      result.body['data'].each do |data|
+        mobile = data['mobile']
+        if data['code'] == 0
+          successful_people << mobile
+        else
+          failed_people << mobile
+        end
+      end
       result
     end
 
-    YunPianSMS::BatchResult.new(successful_count, total_fee, details)
+    YunPianSMS::BatchResult.new(successful_count, successful_people, failed_people, total_fee, details)
   end
 
   private
